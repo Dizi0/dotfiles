@@ -25,6 +25,13 @@
     fap             = fetch --all --prune
     last            = log -1 HEAD
     stnfm           = ! git -c core.fileMode=false st
+    ultra-gc = !"git repack -ad --depth=250 --window=250 && git prune && git count-objects -vH"
 
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
