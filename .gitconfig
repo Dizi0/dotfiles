@@ -25,7 +25,7 @@
     fap             = fetch --all --prune
     last            = log -1 HEAD
     stnfm           = ! git -c core.fileMode=false st
-    ultra-gc = !"git repack -ad --depth=250 --window=250 && git prune && git count-objects -vH"
+    ultra-gc        = !"git repack -ad --depth=250 --window=250 && git prune && git count-objects -vH"
 
 [push]
 	default = simple
